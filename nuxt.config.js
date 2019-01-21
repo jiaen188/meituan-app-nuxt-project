@@ -71,6 +71,7 @@ module.exports = {
         })
       }
     },
-    cache: true
+    // https://github.com/nuxt/nuxt.js/issues/3804
+    cache: false
   }
 }
