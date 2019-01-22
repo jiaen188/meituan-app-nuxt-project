@@ -10,11 +10,15 @@
         :span="15"
         class="center">
         <div class="wrapper">
-          <el-input placeholder="搜索商家或地点" />
-          <button class="el-button el-button-primary"><i class="el-icon-search" /></button>
+          <el-input
+            v-model="search"
+            placeholder="搜索商家或地点"
+            @focus="focus"
+            @blur="blur" />
+          <button class="el-button el-button--primary"><i class="el-icon-search" /></button>
           <dl
-            class="hotPlace"
-            style="display: none">
+            v-if="isHotPlace"
+            class="hotPlace">
             <dt>热门搜索</dt>
             <dd>火锅</dd>
             <dd>火锅</dd>
@@ -23,8 +27,8 @@
             <dd>火锅</dd>
           </dl>
           <dl
-            class="searchList"
-            style="display: none">
+            v-if="isSearchList"
+            class="searchList">
             <dd>火锅2</dd>
             <dd>火锅2</dd>
             <dd>火锅2</dd>
@@ -84,6 +88,29 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+      search: '',
+      isFocus: false,
+    }
+  },
+  computed: {
+    isHotPlace() {
+      return this.isFocus && !this.search
+    },
+    isSearchList() {
+      return this.isFocus && this.search
+    }
+  },
+  methods: {
+    focus() {
+      this.isFocus = true
+    },
+    blur() {
+      setTimeout(() => {
+        this.isFocus = false
+      }, 200)
+    },
+  },
 }
 </script>
