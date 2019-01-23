@@ -1,6 +1,6 @@
 <template>
   <div class="m-header">
-    <el-row>
+    <el-row style="height: auto;">
       <el-col>
         <top-bar />
       </el-col>
@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/css/public/header/index.scss'
+@import '@/assets/css/public/header/index.scss';
+.m-header {
+  background: #fff;
+}
 </style>
-
