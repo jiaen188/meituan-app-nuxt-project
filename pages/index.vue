@@ -4,7 +4,7 @@
       <el-col :span="5">
         <emenu />
       </el-col>
-      <el-col :span="19">2</el-col>
+      <el-col :span="19">2测试github账号</el-col>
     </el-row>
     <el-row>
       <el-col :span="24">3</el-col>
