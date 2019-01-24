@@ -2,7 +2,7 @@
   <div class="m-life">
     <el-row>
       <el-col :span="14">
-        slider
+        <slider/>
       </el-col>
       <el-col :span="4">
         <div class="m-life-pic"/>
@@ -46,12 +46,14 @@
 </template>
 
 <script>
-
+import Slider from './slider.vue'
 export default {
   components: {
+    Slider
   }
 }
 </script>
+
 
 <style lang="scss">
 @import "@/assets/css/index/life.scss";
