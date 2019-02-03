@@ -164,3 +164,20 @@ router.get('/exit', async (ctx, next) => {
     }
   }
 })
+
+router.ger('/getUser', async (ctx) => {
+  if (ctx.isAuthenticated()) {
+    const { username, email } = ctx.session.passport.user
+    ctx.body = {
+      user: username,
+      email
+    }
+  } else {
+    ctx.body = {
+      user: '',
+      email: ''
+    }
+  }
+})
+
+export default router
