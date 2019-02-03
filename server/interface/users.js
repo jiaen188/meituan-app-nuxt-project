@@ -151,3 +151,16 @@ router.post('/verify', async(ctx, next) => {
     msg: '验证码已发送，可能会有延迟，有效期1分钟'
   }
 })
+
+router.get('/exit', async (ctx, next) => {
+  await ctx.logout() // 注销操作
+  if (!ctx.isAuthenticated()) { // 二次验证是否已经注销
+    ctx.body = {
+      code: 0
+    }
+  } else {
+    ctx.body = {
+      code: -1
+    }
+  }
+})
