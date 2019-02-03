@@ -107,3 +107,47 @@ router.post('/signin', async (ctx, next) => {
     }
   })(ctx, next)
 })
+
+router.post('/verify', async(ctx, next) => {
+  let username = ctx.request.body.username
+  const saveExpire = await Store.hget(`nodemail${username}`, 'expire')
+  if (saveExpire && new Date().getTime() - saveExpire < 0) {
+    ctx.body = {
+      code: -1,
+      msg: '验证请求过于频繁，1分钟1次'
+    }
+    return false
+  }
+  let transporter = nodeMailer.createTransport({
+    host: Email.smtp.host,
+    port: 587,
+    secure: false, // true的话就是监听465端口，false的话就是其他端口
+    auth: {
+      user: Email.smtp.user,
+      pass: Email.smtp.pass
+    }
+  })
+  let ko = {
+    code: Email.smtp.code(),
+    expire: Email.smtp.expire(),
+    email: ctx.request.body.email,
+    user: ctx.request.body.username
+  }
+  let mailOptions = {
+    from: `"认证邮件" <${Email.smtp.user}>`,
+    to: ko.email,
+    subject: '《高仿美团网全栈实战》注册码',
+    html: `您在《高仿美团网全栈实战》课程中注册，您的邀请码是${ko.code}`
+  }
+  await transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log('error')
+    } else {
+      Store.hmset(`nodemail:${ko.user}`, 'code', ko.code, 'expire', ko.expire, 'email', ko.email )
+    }
+  })
+  ctx.body = {
+    code: 0,
+    msg: '验证码已发送，可能会有延迟，有效期1分钟'
+  }
+})
