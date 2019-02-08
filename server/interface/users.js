@@ -21,6 +21,7 @@ router.post('/signup', async (ctx) => {
   } = ctx.request.body
 
   if (code) { // code 和 有效时间 是存在 redis，不然内存爆炸，而且不利于 一一对应
+    // 从 redis中获取
     const saveCode = await Store.hget(`nodemail:${username}`, 'code')
     const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
     if (code === saveCode) { // 验证码对上了
@@ -84,6 +85,7 @@ router.post('/signup', async (ctx) => {
 })
 
 router.post('/signin', async (ctx, next) => {
+  // 我们在 possport中引用的是passport-local 策略
   return Passport.authenticate('local', function(err, user, info, status) {
     if (err) {
       ctx.body = {
@@ -143,6 +145,7 @@ router.post('/verify', async(ctx, next) => {
     if (error) {
       return console.log('error')
     } else {
+      // 在redis中存储
       Store.hmset(`nodemail:${ko.user}`, 'code', ko.code, 'expire', ko.expire, 'email', ko.email )
     }
   })
@@ -165,8 +168,9 @@ router.get('/exit', async (ctx, next) => {
   }
 })
 
-router.ger('/getUser', async (ctx) => {
+router.get('/getUser', async (ctx) => {
   if (ctx.isAuthenticated()) {
+    // passport 会把用户信息 session放到参数对象中
     const { username, email } = ctx.session.passport.user
     ctx.body = {
       user: username,
