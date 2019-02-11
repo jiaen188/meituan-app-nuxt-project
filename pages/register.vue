@@ -118,6 +118,43 @@ export default {
   methods: {
     sendMsg() {
       console.log('发送验证码')
+      let namePass
+      let emailPass
+      if (this.timerid) {
+        return false
+      }
+      this.$refs['ruleForm'].validateField('name', valid => {
+        namePass = valid
+      })
+      this.statusMsg = ''
+      if (namePass) {
+        return false
+      }
+      this.$refs['ruleForm'].validateField('email', valid => {
+        emailPass = valid
+      }) 
+      if (!namePass && !emailPass) {
+        this.$axios.post('/users/verify', {
+          username: encodeURIComponent(this.ruleForm.name),
+          email: this.ruleForm.email
+        }).then(({
+          status,
+          data
+        }) => {
+          if (status === 200 && data && data.code === 0) {
+            let count = 60
+            this.statusMsg = `验证码已发送，剩余${count--}秒`
+            this.timerid = setInterval(() => {
+              this.statusMsg = `验证码已发送，剩余${count--}秒`
+              if (count === 0) {
+                clearInterval(this.timerid)
+              }
+            }, 1000)
+          } else {
+            this.statusMsg = data.msg
+          }
+        })
+      }
     },
     register() {
       console.log('注册')
