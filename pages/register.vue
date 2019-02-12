@@ -76,6 +76,8 @@
 </template>
 
 <script>
+import CryptoJS from 'crypto-js'
+
 export default {
   layout: 'blank',
   data() {
@@ -117,7 +119,6 @@ export default {
   },
   methods: {
     sendMsg() {
-      console.log('发送验证码')
       let namePass
       let emailPass
       if (this.timerid) {
@@ -157,7 +158,30 @@ export default {
       }
     },
     register() {
-      console.log('注册')
+      this.$refs['ruleForm'].validate((valid) => {
+        if (valid) {
+          this.$axios.post('/users/signup', {
+            username: window.encodeURIComponent(this.ruleForm.name),
+            password: CryptoJS.MD5(this.ruleForm.pwd).toString(),
+            email: this.ruleForm.email,
+            code: this.ruleForm.code
+          }).then(({ status, data }) => {
+            if (status === 200) {
+              if (data && data.code === 0) {
+                location.href = '/login'
+              } else {
+                this.error = data.msg
+              }
+            } else {
+              this.error = `服务器出错，错误码：${status}`
+            }
+            // 定时清空错误信息，因为错误信息存下来没有清除，需要加一个定时器，防止给用户增加困扰
+            setTimeout(() => {
+              this.error = ''
+            }, 1500)
+          })
+        }
+      })
     }
   }
 }
