@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import geo from './modules/geo'
+import home from './modules/home'
 
 Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   modules: {
-    geo
+    geo,
+    home
   },
   actions: {
     async nuxtServerInit({ // nuxtServerInit是nuxt的生命周期，具体看第4章
@@ -26,6 +28,9 @@ const store = () => new Vuex.Store({
         city: '',
         province: ''
       })
+
+      const { status: status2, data: { menu } } = await app.$axios.get('geo/menu')
+      commit('home/setMenu', status2 === 200 ? menu : [])
     }
   }
 }) 
