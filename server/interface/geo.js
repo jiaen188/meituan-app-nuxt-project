@@ -70,6 +70,35 @@ router.get('/province/:id', async (ctx) => {
   }
 })
 
+router.get('/city', async (ctx) => {
+  // let city = []
+  // let result = await City.find()
+  // result.forEach(item => {
+  //   city = city.concat(item.value)
+  // })
+  // ctx.body = {
+  //   code: 0,
+  //   city: city.map(item => {
+  //     return {
+  //       province: item.province,
+  //       id: item.id,
+  //       name: item.name === '市辖区' || item.name === '省直辖县级行政区划' ? item.province : item.name
+  //     }
+  //   })
+  // }
+
+  let { status, data: { city } } = await axios.get(`http://cp-tools.cn/geo/city?sign=${sign}`)
+  if (status === 200) {
+    ctx.body = {
+      city
+    }
+  } else {
+    ctx.body = {
+      city: []
+    }
+  }
+})
+
 router.get('/menu', async (ctx) => {
   // const result = await Menu.findOne()
   // ctx.body = {
