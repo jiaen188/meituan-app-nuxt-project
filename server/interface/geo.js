@@ -1,7 +1,6 @@
 import Router from 'koa-router'
 import axios from './utils/axios'
 import Province from '../dbs/models/province'
-import { listenerCount } from 'cluster';
 
 let router = new Router({
   prefix: '/geo'
