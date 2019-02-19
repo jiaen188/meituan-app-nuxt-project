@@ -50,191 +50,11 @@ export default {
     return {
       kind: 'all',
       list: {
-        all: [{
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }],
-        part: [{
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }],
-        spa: [{
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }],
-        movie: [{
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }],
-        travel: [{
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }, {
-          title: '原牛道牛肉火锅',
-          pos: '海鲜自助料理',
-          price: Math.ceil(Math.random() * 400),
-          img: '//p0.meituan.net/mogu/fc091566222b23c51857ab4316633e43370925.jpg@368w_208h_1e_1c',
-          url: '//abc.com'
-        }]
+        all: [],
+        part: [],
+        spa: [],
+        movie: [],
+        travel: []
       }
     }
   },
@@ -243,12 +63,55 @@ export default {
       return this.list[this.kind]
     }
   },
+  async mounted() {
+    let { status, data: { count, pois } } = await this.$axios.get('/search/resultsByKeywords', {
+      params: {
+        keyword: '景点',
+        city: this.$store.state.geo.position.city
+      }
+    })
+    if (status === 200 && count > 0) {
+      let r = pois.filter(item => item.photos.length).map(item => {
+        return {
+          title: item.name,
+          pos: item.type.split(';')[0],
+          price: item.biz_ext.cost.length ? item.biz_ext.cost : '暂无',
+          img: item.photos[0].url,
+          url: '//abc.com'
+        }
+      })
+      this.list[this.kind] = r.slice(0, 9)
+    } else {
+      this.list[this.kind] = []
+    }
+  },
   methods: {
-    over(e) {
+    async over(e) {
       let dom = e.target
       let tag = dom.tagName.toLowerCase()
       if (tag === 'dd') {
         this.kind = dom.getAttribute('kind')
+        let keyword = dom.getAttribute('keyword')
+        let { status, data: { count, pois } } = await this.$axios('/search/resultsByKeywords', {
+          params: {
+            city: this.$store.state.geo.position.city,
+            keyword
+          }
+        })
+        if (status === 200 && count > 0) {
+          let r = pois.filter(item => item.photos.length).map(item => {
+            return {
+              title: item.name,
+              pos: item.type.split(';')[0],
+              price: item.biz_ext.cost.length ? item.biz_ext.cost : '暂无',
+              img: item.photos[0].url,
+              url: '//abc.com'
+            }
+          })
+          this.list[this.kind] = r.slice(0, 9)
+        } else {
+          this.list[this.kind] = []
+        }
       }
     }
   }
