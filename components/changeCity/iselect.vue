@@ -23,7 +23,7 @@
     <el-autocomplete
       v-model="input"
       :fetch-suggestions="querySearchAsync"
-      placeholder="请输入中文或拼音"
+      placeholder="请输入城市中文或拼音"
       @select="handleSelect"/>
   </div>
 </template>

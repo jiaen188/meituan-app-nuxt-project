@@ -99,7 +99,7 @@ router.get('/city', async (ctx) => {
   }
 })
 
-router.get('hotCity', async (ctx) => {
+router.get('/hotCity', async (ctx) => {
   // let list = [
   //   '北京市',
   //   '上海市',
