@@ -57,7 +57,7 @@ export default {
       })
     }
     const url = `https://webapi.amap.com/maps?v=1.4.13&key=${this.key}&callback=onmaploaded`
-    const jsapi = doc.createElement('script')
+    const jsapi = document.createElement('script')
     jsapi.charset = 'utf-8'
     jsapi.src = url
     document.head.appendChild(jsapi)
