@@ -49,7 +49,7 @@ export default {
         let toolbar = new window.AMap.ToolBar()
         map.addControl(toolbar)
         let marker = new window.AMap.Marker({
-          icon: '',
+          icon: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
           position: self.point
         })
         self.marker = marker
