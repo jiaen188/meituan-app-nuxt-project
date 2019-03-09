@@ -1,10 +1,9 @@
 import Router from 'koa-router'
 import axios from './utils/axios'
+import sign from './utils/sign'
 import Poi from '../dbs/models/poi'
 
 let router = new Router({ prefix: '/search' })
-
-const sign = 'a3c9fe0782107295ee9f1709edd15218'
 
 router.get('/top', async (ctx) => {
   // try {
