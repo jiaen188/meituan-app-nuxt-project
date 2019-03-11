@@ -9,7 +9,7 @@
           :alt="meta.photos[0].title">
       </dd>
       <dd>
-        <h4>{{ meta.name}}</h4>
+        <h4>{{ meta.name }}</h4>
         <p>
           <span v-if="meta.biz_ext && meta.biz_ext.ticker_ordering">剩余：{{ Number(meta.biz_ext.ticker_ordering) }}</span>
           <span v-if="meta.deadline">截止日期：{{ meta.deadline }}</span>
