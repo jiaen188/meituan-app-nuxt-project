@@ -40,4 +40,20 @@ router.post('/create', async(ctx) => {
   }
 })
 
+router.post('/getCart', async (ctx) => {
+  let { id } = ctx.request.body
+  try {
+    let result = await Cart.findOne({ cartNo: id })
+    ctx.body = {
+      code: 0,
+      data: result ? result.detail[0] : {}
+    }
+  } catch (e) {
+    ctx.body = {
+      code: -1,
+      data: {}
+    }
+  }
+})
+
 export default router
