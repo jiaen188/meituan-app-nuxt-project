@@ -41,7 +41,21 @@ export default {
   },
   methods: {
     async createCart() {
-      console.log('createCart')
+      let { status, data: { code, id } } = await this.$axios.post('/cart/create', {
+        params: {
+          id: Math.random().toString().slice(3, 9),
+          detail: {
+            name: this.meta.name,
+            price: this.meta.biz_ext.cost,
+            imgs: this.meta.photos
+          }
+        }
+      })
+      if (status === 200 && code === 0) {
+        window.location.href = `/cart/?id=${id}`
+      } else {
+        console.log('error')
+      }
     }
   }
 }

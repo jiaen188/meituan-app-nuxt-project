@@ -4,7 +4,7 @@ import md5 from 'crypto-js/md5'
 import Cart from '../dbs/models/Cart'
 
 let router = new Router({
-  prefix: '/Cart'
+  prefix: '/cart'
 })
 
 router.post('/create', async(ctx) => {
