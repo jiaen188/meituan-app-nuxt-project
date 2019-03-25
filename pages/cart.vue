@@ -2,10 +2,10 @@
   <div class="page-cart">
     <el-row>
       <el-col
-        v-if="1 || cart.length"
+        v-if="cart.length"
         :span="24"
         class="m-cart">
-        <list />
+        <list :cart-data="cart" />
         <p>
           应付金额：<em class="money">¥{{ total }}</em>
         </p>
@@ -47,7 +47,22 @@ export default {
     submit() {
       console.log('submit')
     }
-  }
+  },
+  async asyncData(ctx) {
+    let { status, data: { code, data: { name, price} } } = await ctx.$axios.post('/cart/getCart', {
+      id: ctx.query.id
+    })
+    if (status === 200 && code === 0 && name) {
+      return {
+        cart: [{
+          name,
+          price,
+          count: 1
+        }],
+        cartNo: ctx.query.id
+      }
+    }
+  },
 }
 </script>
 

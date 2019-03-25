@@ -15,7 +15,7 @@ router.post('/create', async(ctx) => {
     }
   } else {
     let time = Date()
-    let cartNo = md5(Math.random() * 1000 + new Date().getTime()).toString()
+    let cartNo = md5(Math.random() * 1000 + time).toString()
     let { params: { id, detail } } = ctx.request.body
     let cart = new Cart({
       id,
