@@ -16,6 +16,8 @@ import geo from './interface/geo'
 import search from './interface/search'
 import categroy from './interface/categroy'
 import cart from './interface/cart'
+import order from './interface/order'
+
 
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
@@ -53,6 +55,7 @@ async function start() {
   app.use(search.routes()).use(search.allowedMethods()) // 引入路由
   app.use(categroy.routes()).use(categroy.allowedMethods()) // 引入路由
   app.use(cart.routes()).use(cart.allowedMethods()) // 引入路由
+  app.use(order.routes()).use(order.allowedMethods()) // 引入路由
 
   app.use(ctx => {
     ctx.status = 200 // koa defaults to 404 when it sees that status is unset
